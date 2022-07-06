@@ -150,8 +150,12 @@ class LunaCalendarConverter {
   //Tính xem mặt trời nằm ở khoảng nào trên đường hoàng đạo vào thời điểm bắt đầu một tháng âm lịch:
   //-chia đường hoàng đạo làm 12 phần và đánh số các cung này từ 0 đến 11: từ Xuân phân đến Cốc vũ là 0; từ Cốc vũ đến Tiểu mãn là 1; từ Tiểu mãn đến Hạ chí là 2; v.v..
   //-cho jdn là số ngày Julius của bất kỳ một ngày, phương pháp sau này sẽ trả lại số cung nói trên.
-  num getSunLongitude(dayNumber, timeZone) {
+  int getSunLongitude(dayNumber, timeZone) {
     return INT(_getSunLongitude(dayNumber - 0.5 - timeZone / 24) / pi * 6);
+  }
+
+  int getSunLongitudeTietKhi(dayNumber, timeZone) {
+    return INT(_getSunLongitude(dayNumber - 0.5 - timeZone / 24) / pi * 12);
   }
 
   num _getSunLongitude(jdn) {
@@ -376,7 +380,7 @@ class LunaCalendarConverter {
   }
 
   getTietKhi(jd) {
-    return TIETKHI[getSunLongitude(jd + 1, 7.0)];
+    return TIETKHI[getSunLongitudeTietKhi(jd + 1, 7.0)];
   }
 
   getBeginHour(jdn) {
