@@ -1,14 +1,14 @@
 library lunar_calendar_converter;
 
-import 'dart:io';
+import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:xml2json/xml2json.dart';
 
 import 'constants.dart';
 import 'package:xml/xml.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
-export 'package:xml/xml.dart';
 
 enum Timezone {
   Chinese,
@@ -30,6 +30,7 @@ class LunaCalendarConverter {
       _instance = LunaCalendarConverter._();
       await _instance!.init();
     }
+    _instance!.getDateStar(dateStarMineStone);
     return _instance!;
   }
 
@@ -42,18 +43,20 @@ class LunaCalendarConverter {
     return value.floor();
   }
 
-  XmlElement getDateStar(DateTime date){
+  Map<String, dynamic> getDateStar(DateTime date){
     late int days;
-    if(date.isAfter(dateStarMineStone)){
-      days = DateTimeRange(start: dateStarMineStone, end: date).duration.inDays;
-      days = days%28 + 1;
-    }else {
+    if(date.isBefore(dateStarMineStone)){
       days = DateTimeRange(start: date, end: dateStarMineStone).duration.inDays;
       days = 29-days%28;
+    }else {
+      days = DateTimeRange(start: dateStarMineStone, end: date).duration.inDays;
+      days = days%28 + 1;
     }
     final starElements = _nhiThapBatTuXml.findAllElements('ROW').toList();
     final XmlElement element = starElements.firstWhere((e) => e.getElement('number')!.text == '$days');
-    return element;
+    final Xml2Json xml2json = Xml2Json();
+    xml2json.parse(element.toXmlString());
+    return jsonDecode(xml2json.toGData());
   }
 
   //Chuyển đổi ngày tháng năm -> số ngày Julius
