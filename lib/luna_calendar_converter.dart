@@ -40,7 +40,7 @@ class LunaCalendarConverter {
     return value.floor();
   }
 
-  getDateStar(DateTime date){
+  XmlElement getDateStar(DateTime date){
     late int days;
     if(date.isAfter(dateStarMineStone)){
       days = DateTimeRange(start: dateStarMineStone, end: date).duration.inDays;
@@ -51,7 +51,7 @@ class LunaCalendarConverter {
     }
     final starElements = _nhiThapBatTuXml.findAllElements('ROW').toList();
     final XmlElement element = starElements.firstWhere((e) => e.getElement('number')!.text == '$days');
-    debugPrint(element.toString());
+    return element;
   }
 
   //Chuyển đổi ngày tháng năm -> số ngày Julius
