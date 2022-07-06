@@ -8,7 +8,7 @@ const canList = [
   "Bính",
   "Đinh",
   "Mậu",
-  "Kỉ"
+  "Kỷ"
 ];
 const chiList = [
   "Thân",
@@ -20,7 +20,7 @@ const chiList = [
   "Dần",
   "Mão",
   "Thìn",
-  "Tị",
+  "Tỵ",
   "Ngọ",
   "Mùi"
 ];
@@ -29,7 +29,7 @@ const chiForMonthList = [
   "Dần",
   "Mão",
   "Thìn",
-  "Tị",
+  "Tỵ",
   "Ngọ",
   "Mùi",
   "Thân",

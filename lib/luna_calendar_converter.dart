@@ -20,6 +20,7 @@ enum Timezone {
 class LunaCalendarConverter {
 
   late final XmlDocument _nhiThapBatTuXml;
+  late final XmlDocument _tuoiXungXml;
 
   LunaCalendarConverter._();
 
@@ -30,12 +31,15 @@ class LunaCalendarConverter {
       _instance = LunaCalendarConverter._();
       await _instance!.init();
     }
+    _instance!.getCounterAgeOfDay(2459767);
     return _instance!;
   }
 
   Future<void> init() async {
     final String nhiThapBatTuString = await rootBundle.loadString('packages/luna_calendar_converter/assets/xmls/tb_thapnhibattu.xml');
     _nhiThapBatTuXml = XmlDocument.parse(nhiThapBatTuString);
+    final String tuoiXungString = await rootBundle.loadString('packages/luna_calendar_converter/assets/xmls/tb_tuoixung.xml');
+    _tuoiXungXml = XmlDocument.parse(tuoiXungString);
   }
 
   int INT(double value) {
@@ -363,6 +367,14 @@ class LunaCalendarConverter {
     var dayName, monthName, yearName;
     dayName = CAN[(jdn + 9) % 10] + " " + CHI[(jdn + 1) % 12];
     return dayName;
+  }
+
+  //Tính tuổi xung khắc
+  String getCounterAgeOfDay(jdn){
+    var dayName = CAN[(jdn + 9) % 10] + " " + CHI[(jdn + 1) % 12];
+    final starElements = _tuoiXungXml.findAllElements('ROW').toList();
+    final XmlElement element = starElements.firstWhere((e) => e.getElement('ngay')!.text == '$dayName');
+    return element.text;
   }
 
   List<String> getHours(int jd, {bool isGoodDay = true}) {
