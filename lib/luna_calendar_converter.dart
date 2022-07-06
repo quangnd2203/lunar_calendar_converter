@@ -374,7 +374,7 @@ class LunaCalendarConverter {
     var dayName = CAN[(jdn + 9) % 10] + " " + CHI[(jdn + 1) % 12];
     final starElements = _tuoiXungXml.findAllElements('ROW').toList();
     final XmlElement element = starElements.firstWhere((e) => e.getElement('ngay')!.text == '$dayName');
-    return element.text;
+    return element.getElement('tuoixung')!.text;
   }
 
   List<String> getHours(int jd, {bool isGoodDay = true}) {
