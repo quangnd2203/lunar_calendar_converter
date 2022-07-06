@@ -30,7 +30,6 @@ class LunaCalendarConverter {
       _instance = LunaCalendarConverter._();
       await _instance!.init();
     }
-    _instance!.getDateStar(dateStarMineStone);
     return _instance!;
   }
 
