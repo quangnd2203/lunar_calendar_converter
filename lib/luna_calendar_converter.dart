@@ -150,11 +150,11 @@ class LunaCalendarConverter {
   //Tính xem mặt trời nằm ở khoảng nào trên đường hoàng đạo vào thời điểm bắt đầu một tháng âm lịch:
   //-chia đường hoàng đạo làm 12 phần và đánh số các cung này từ 0 đến 11: từ Xuân phân đến Cốc vũ là 0; từ Cốc vũ đến Tiểu mãn là 1; từ Tiểu mãn đến Hạ chí là 2; v.v..
   //-cho jdn là số ngày Julius của bất kỳ một ngày, phương pháp sau này sẽ trả lại số cung nói trên.
-  int getSunLongitude(dayNumber, timeZone) {
+  num getSunLongitude(dayNumber, timeZone) {
     return INT(_getSunLongitude(dayNumber - 0.5 - timeZone / 24) / pi * 6);
   }
 
-  int _getSunLongitude(jdn) {
+  num _getSunLongitude(jdn) {
     var T, T2, dr, M, L0, DL, L;
     T = (jdn - 2451545.0) /
         36525; // Time in Julian centuries from 2000-01-01 12:00:00 GMT
