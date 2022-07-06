@@ -8,6 +8,8 @@ import 'constants.dart';
 import 'package:xml/xml.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
+export 'package:xml/xml.dart';
+
 enum Timezone {
   Chinese,
   Japanese,
