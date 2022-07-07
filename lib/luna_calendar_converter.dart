@@ -30,7 +30,6 @@ class LunaCalendarConverter {
       _instance = LunaCalendarConverter._();
       await _instance!.init();
     }
-    print(_instance!.getGoodBadDays(6));
     return _instance!;
   }
 
