@@ -9,7 +9,6 @@ import 'constants.dart';
 import 'package:xml/xml.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
-
 enum Timezone {
   Chinese,
   Japanese,
@@ -18,20 +17,20 @@ enum Timezone {
 }
 
 class LunaCalendarConverter {
-
   late final XmlDocument _nhiThapBatTuXml;
   late final XmlDocument _tuoiXungXml;
+  late final List<Map<String, dynamic>> _listNgayHoangDaoHacDaoJson;
 
   LunaCalendarConverter._();
 
   static LunaCalendarConverter? _instance;
 
-  static Future<LunaCalendarConverter> instance() async{
-    if(_instance == null){
+  static Future<LunaCalendarConverter> instance() async {
+    if (_instance == null) {
       _instance = LunaCalendarConverter._();
       await _instance!.init();
     }
-    _instance!.getCounterAgeOfDay(2459767);
+    print(_instance!.getGoodBadDays(6));
     return _instance!;
   }
 
@@ -40,23 +39,26 @@ class LunaCalendarConverter {
     _nhiThapBatTuXml = XmlDocument.parse(nhiThapBatTuString);
     final String tuoiXungString = await rootBundle.loadString('packages/luna_calendar_converter/assets/xmls/tb_tuoixung.xml');
     _tuoiXungXml = XmlDocument.parse(tuoiXungString);
+    final String ngayHoangDaoHacDao = await rootBundle.loadString('packages/luna_calendar_converter/assets/jsons/ngayhoangdaohacdao.json');
+    _listNgayHoangDaoHacDaoJson = (jsonDecode(ngayHoangDaoHacDao) as List<dynamic>).map<Map<String, dynamic>>((e) => e).toList();
   }
 
   int INT(double value) {
     return value.floor();
   }
 
-  Map<String, dynamic> getDateStar(DateTime date){
+  Map<String, dynamic> getDateStar(DateTime date) {
     late int days;
-    if(date.isBefore(dateStarMineStone)){
+    if (date.isBefore(dateStarMineStone)) {
       days = DateTimeRange(start: date, end: dateStarMineStone).duration.inDays;
-      days = 29-days%28;
-    }else {
+      days = 29 - days % 28;
+    } else {
       days = DateTimeRange(start: dateStarMineStone, end: date).duration.inDays;
-      days = days%28 + 1;
+      days = days % 28 + 1;
     }
     final starElements = _nhiThapBatTuXml.findAllElements('ROW').toList();
-    final XmlElement element = starElements.firstWhere((e) => e.getElement('number')!.text == '$days');
+    final XmlElement element =
+        starElements.firstWhere((e) => e.getElement('number')!.text == '$days');
     final Xml2Json xml2json = Xml2Json();
     xml2json.parse(element.toXmlString());
     return jsonDecode(xml2json.toGData());
@@ -370,10 +372,11 @@ class LunaCalendarConverter {
   }
 
   //Tính tuổi xung khắc
-  String getCounterAgeOfDay(jdn){
+  String getCounterAgeOfDay(jdn) {
     var dayName = CAN[(jdn + 9) % 10] + " " + CHI[(jdn + 1) % 12];
     final starElements = _tuoiXungXml.findAllElements('ROW').toList();
-    final XmlElement element = starElements.firstWhere((e) => e.getElement('ngay')!.text == '$dayName');
+    final XmlElement element = starElements
+        .firstWhere((e) => e.getElement('ngay')!.text == '$dayName');
     return element.getElement('tuoixung')!.text;
   }
 
@@ -393,6 +396,15 @@ class LunaCalendarConverter {
       }
     }
     return result;
+  }
+
+  List<Map<String, dynamic>> getGoodBadDays(int month,
+      {bool isGoodDay = true}) {
+    return _listNgayHoangDaoHacDaoJson
+        .firstWhere((e) => e['thang'].contains(month))[
+            isGoodDay ? 'hoangDao' : 'hacDao']
+        .map<Map<String, dynamic>>((e) => Map<String, dynamic>.from(e))
+        .toList();
   }
 
   getTietKhi(jd) {

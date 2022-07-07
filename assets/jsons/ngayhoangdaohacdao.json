@@ -1,0 +1,332 @@
+[
+  {
+    "thang": [1,7],
+    "hoangDao" : [
+      {
+        "ngay": "Tý",
+        "cung": "Thanh Long"
+      },
+      {
+        "ngay": "Sửu",
+        "cung": "Minh Đường"
+      },
+      {
+        "ngay": "Thìn",
+        "cung": "Kim Quỹ"
+      },
+      {
+        "ngay": "Tỵ",
+        "cung": "Kim Đường"
+      },
+      {
+        "ngay": "Mùi",
+        "cung": "Ngọc Đường"
+      },
+      {
+        "ngay": "Tuất",
+        "cung": "Tư mệnh"
+      }
+    ],
+    "hacDao" : [
+      {
+        "ngay": "Dần",
+        "cung": "Thiên hình"
+      },
+      {
+        "ngay": "Mão",
+        "cung": "Chu tước"
+      },
+      {
+        "ngay": "Ngọ",
+        "cung": "Bạch hổ"
+      },
+      {
+        "ngay": "Thân",
+        "cung": "Thiên lao"
+      },
+      {
+        "ngay": "Dậu",
+        "cung": "Nguyên vũ"
+      },
+      {
+        "ngay": "Hợi",
+        "cung": "Câu trần"
+      }
+    ]
+  },
+  {
+    "thang": [2,8],
+    "hoangDao" : [
+      {
+        "ngay": "Dần",
+        "cung": "Thanh Long"
+      },
+      {
+        "ngay": "Mão",
+        "cung": "Minh Đường"
+      },
+      {
+        "ngay": "Ngọ",
+        "cung": "Kim Quỹ"
+      },
+      {
+        "ngay": "Mùi",
+        "cung": "Kim Đường"
+      },
+      {
+        "ngay": "Dậu",
+        "cung": "Ngọc Đường"
+      },
+      {
+        "ngay": "Tý",
+        "cung": "Tư mệnh"
+      }
+    ],
+    "hacDao" : [
+      {
+        "ngay": "Thìn",
+        "cung": "Thiên hình"
+      },
+      {
+        "ngay": "Tỵ",
+        "cung": "Chu tước"
+      },
+      {
+        "ngay": "Thân",
+        "cung": "Bạch hổ"
+      },
+      {
+        "ngay": "Tuất",
+        "cung": "Thiên lao"
+      },
+      {
+        "ngay": "Hợi",
+        "cung": "Nguyên vũ"
+      },
+      {
+        "ngay": "Sửu",
+        "cung": "Câu trần"
+      }
+    ]
+  },
+  {
+    "thang": [3,9],
+    "hoangDao" : [
+      {
+        "ngay": "Thìn",
+        "cung": "Thanh Long"
+      },
+      {
+        "ngay": "Tỵ",
+        "cung": "Minh Đường"
+      },
+      {
+        "ngay": "Thân",
+        "cung": "Kim Quỹ"
+      },
+      {
+        "ngay": "Dậu",
+        "cung": "Kim Đường"
+      },
+      {
+        "ngay": "Hợi",
+        "cung": "Ngọc Đường"
+      },
+      {
+        "ngay": "Dần",
+        "cung": "Tư mệnh"
+      }
+    ],
+    "hacDao" : [
+      {
+        "ngay": "Ngọ",
+        "cung": "Thiên hình"
+      },
+      {
+        "ngay": "Mùi",
+        "cung": "Chu tước"
+      },
+      {
+        "ngay": "Tuất",
+        "cung": "Bạch hổ"
+      },
+      {
+        "ngay": "Tý",
+        "cung": "Thiên lao"
+      },
+      {
+        "ngay": "Sửu",
+        "cung": "Nguyên vũ"
+      },
+      {
+        "ngay": "Mão",
+        "cung": "Câu trần"
+      }
+    ]
+  },
+  {
+    "thang": [4,10],
+    "hoangDao" : [
+      {
+        "ngay": "Ngọ",
+        "cung": "Thanh Long"
+      },
+      {
+        "ngay": "Mùi",
+        "cung": "Minh Đường"
+      },
+      {
+        "ngay": "Tuất",
+        "cung": "Kim Quỹ"
+      },
+      {
+        "ngay": "Hợi",
+        "cung": "Kim Đường"
+      },
+      {
+        "ngay": "Sửu",
+        "cung": "Ngọc Đường"
+      },
+      {
+        "ngay": "Thìn",
+        "cung": "Tư mệnh"
+      }
+    ],
+    "hacDao" : [
+      {
+        "ngay": "Thân",
+        "cung": "Thiên hình"
+      },
+      {
+        "ngay": "Dậu",
+        "cung": "Chu tước"
+      },
+      {
+        "ngay": "Tý",
+        "cung": "Bạch hổ"
+      },
+      {
+        "ngay": "Dần",
+        "cung": "Thiên lao"
+      },
+      {
+        "ngay": "Mão",
+        "cung": "Nguyên vũ"
+      },
+      {
+        "ngay": "Tỵ",
+        "cung": "Câu trần"
+      }
+    ]
+  },
+  {
+    "thang": [5,11],
+    "hoangDao" : [
+      {
+        "ngay": "Thân",
+        "cung": "Thanh Long"
+      },
+      {
+        "ngay": "Dậu",
+        "cung": "Minh Đường"
+      },
+      {
+        "ngay": "Tý",
+        "cung": "Kim Quỹ"
+      },
+      {
+        "ngay": "Sửu",
+        "cung": "Kim Đường"
+      },
+      {
+        "ngay": "Mão",
+        "cung": "Ngọc Đường"
+      },
+      {
+        "ngay": "Ngọ",
+        "cung": "Tư mệnh"
+      }
+    ],
+    "hacDao" : [
+      {
+        "ngay": "Tuất",
+        "cung": "Thiên hình"
+      },
+      {
+        "ngay": "Hợi",
+        "cung": "Chu tước"
+      },
+      {
+        "ngay": "Dần",
+        "cung": "Bạch hổ"
+      },
+      {
+        "ngay": "Thìn",
+        "cung": "Thiên lao"
+      },
+      {
+        "ngay": "Tỵ",
+        "cung": "Nguyên vũ"
+      },
+      {
+        "ngay": "Mùi",
+        "cung": "Câu trần"
+      }
+    ]
+  },
+  {
+    "thang": [6,12],
+    "hoangDao" : [
+      {
+        "ngay": "Tuất",
+        "cung": "Thanh Long"
+      },
+      {
+        "ngay": "Hợi",
+        "cung": "Minh Đường"
+      },
+      {
+        "ngay": "Dần",
+        "cung": "Kim Quỹ"
+      },
+      {
+        "ngay": "Mão",
+        "cung": "Kim Đường"
+      },
+      {
+        "ngay": "Tỵ",
+        "cung": "Ngọc Đường"
+      },
+      {
+        "ngay": "Thân",
+        "cung": "Tư mệnh"
+      }
+    ],
+    "hacDao" : [
+      {
+        "ngay": "Tý",
+        "cung": "Thiên hình"
+      },
+      {
+        "ngay": "Sửu",
+        "cung": "Chu tước"
+      },
+      {
+        "ngay": "Thìn",
+        "cung": "Bạch hổ"
+      },
+      {
+        "ngay": "Ngọ",
+        "cung": "Thiên lao"
+      },
+      {
+        "ngay": "Mùi",
+        "cung": "Nguyên vũ"
+      },
+      {
+        "ngay": "Dậu",
+        "cung": "Câu trần"
+      }
+    ]
+  }
+]

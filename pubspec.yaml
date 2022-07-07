@@ -27,6 +27,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/xmls/
+    - assets/jsons/
 #    - packages/lunar_calendar_converter/assets/xmls/tb_thapnhibattu.xml
   #
   # For details regarding assets in packages, see
