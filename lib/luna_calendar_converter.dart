@@ -400,8 +400,7 @@ class LunaCalendarConverter {
   List<Map<String, dynamic>> getGoodBadDays(int month,
       {bool isGoodDay = true}) {
     return _listNgayHoangDaoHacDaoJson
-        .firstWhere((e) => e['thang'].contains(month))[
-            isGoodDay ? 'hoangDao' : 'hacDao']
+        .firstWhere((e) => e['thang'].contains(month))[isGoodDay ? 'hoangDao' : 'hacDao']
         .map<Map<String, dynamic>>((e) => Map<String, dynamic>.from(e))
         .toList();
   }
