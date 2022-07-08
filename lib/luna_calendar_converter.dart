@@ -31,7 +31,6 @@ class LunaCalendarConverter {
       _instance = LunaCalendarConverter._();
       await _instance!.init();
     }
-    print( _instance!.getLucDieuDay(11, 6));
     return _instance!;
   }
 
