@@ -31,6 +31,9 @@ class LunaCalendarConverter {
       _instance = LunaCalendarConverter._();
       await _instance!.init();
     }
+    for(int i = 1; i <= 29; i++){
+      print(_instance!.getLucDieuDay(i, 6));
+    }
     return _instance!;
   }
 
@@ -383,12 +386,13 @@ class LunaCalendarConverter {
     return element.getElement('tuoixung')!.text;
   }
 
-  Map<String, dynamic> getLucDieuDay(int lunarDay, int lunarMonth){
+  Map<String, dynamic>? getLucDieuDay(int lunarDay, int lunarMonth){
     assert (lunarDay > 0);
     assert (lunarMonth > 0 || lunarMonth < 13);
     int idLucDieuFirstDayOfMonth = (_khongMinhLucDieuData['dataMonth'] as List).firstWhere((e) => e['month'].contains(lunarMonth))['firstDay'];
-    int remainder = lunarDay % 6 - 1;
-    return (_khongMinhLucDieuData['dataDay'] as List).firstWhere((e) => e['id'] == remainder + idLucDieuFirstDayOfMonth);
+    int remainder = lunarDay % 6;
+    int id = idLucDieuFirstDayOfMonth + remainder;
+    return (_khongMinhLucDieuData['dataDay'] as List).firstWhere((e) => e['id'] == (id > 6 ? id - 6 : id));
   }
 
   Map<String, dynamic> getLucDieuOfMonthData(int lunarMonth){
