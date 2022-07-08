@@ -383,7 +383,7 @@ class LunaCalendarConverter {
     return element.getElement('tuoixung')!.text;
   }
 
-  Map<String, dynamic>? getLucDieuDay(int lunarDay, int lunarMonth){
+  Map<String, dynamic> getLucDieuDay(int lunarDay, int lunarMonth){
     assert (lunarDay > 0);
     assert (lunarMonth > 0 || lunarMonth < 13);
     int idLucDieuFirstDayOfMonth = (_khongMinhLucDieuData['dataMonth'] as List).firstWhere((e) => e['month'].contains(lunarMonth))['firstDay'];
