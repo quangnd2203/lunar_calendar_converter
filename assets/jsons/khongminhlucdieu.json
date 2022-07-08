@@ -1,0 +1,84 @@
+{
+  "dataDay" : [
+    {
+      "id" : 1,
+      "name" : "Đại An",
+      "poem" : "Đại An gặp được quý nhân\nCó cơm có rượu có tiền tiễn đưa\nChẳng thời cũng được Đại An\nBình an vô sự tấm thân thanh nhàn",
+      "mean" : "Ngày đại an còn gọi là Đại an cát nhật là cát thần (ngày tốt nhất) trong Lục Diệu. Trong ngày Đại An thì mọi việc đều an toàn, dễ đạt được mục đích nên có thể tiến hành mọi công việc lớn nhỏ, đặc biệt các việc quan trọng như cưới hỏi, ký kết hợp đồng, khai trương, động thổ, khởi công, nhập trạch, nhậm chức...",
+      "isGood" : true,
+      "level" : 3,
+      "levelTitle" : "Rất tốt"
+    },
+    {
+      "id" : 2,
+      "name" : "Lưu Niên",
+      "poem" : "Lưu Niên là chuyện bất tường\nTìm bạn chẳng thấy nửa đường phân ly\nKhông thì lưu lạc một khi\nNhiều đường trắc trở nhiều khi nhọc nhằn",
+      "mean" : "Ngày Lưu Liên (có sách gọi là Hữu Dẫn) là hung thần (rất xấu). Ngày Lưu Liên là ngày chỉ tốt một nửa, ban ngày hầu như đặc biệt xấu. Vốn dĩ đây là ngày bất phân thắng phụ. Trong ngày Lưu Liên mọi việc dễ thất bại, mất của, tai nạn, thiệt thân. Không có lợi cho mọi việc. Do đó không nên tiến hành các công việc lớn và quan trọng như cưới hỏi, ký kết hợp đồng, khai trương, động thổ, khởi công, nhập trạch, nhậm chức...",
+      "isGood" : false,
+      "level" : 3,
+      "levelTitle" : "Rất xấu"
+    },
+    {
+      "id" : 3,
+      "name" : "Tốc Hỷ",
+      "poem" : "Tốc Hỷ là bạn trùng phùng\nGặp trùng gặp bạn vợ chồng sánh đôi\nCó tài có lộc hẳn hoi\nCầu gì cũng được mừng vui thỏa lòng",
+      "mean" : "Ngày Tốc Hỷ (có sách gọi là Tiên thắng) là ngày tốt vừa trong Lục Diệu, có nghĩa là \"trước thì hơn\" hình như có việc gì, làm trước người khác thì tốt hơn. Tục ngữ dân gian nói: \"Làm quỷ cũng phải đi trước\", vì thế ngày này buổi sáng thì tốt, buổi chiều lại hung. Trong ngày Tốc Hỷ thì cái tốt đến nhanh, không bền, có khi buổi sáng tốt, buổi chiều xấu. Có thể tiến hành các công việc bình thường, phù hợp với việc kết thúc nhanh, không hợp với việc kéo dài.",
+      "isGood" : true,
+      "level" : 1,
+      "levelTitle" : "Tốt"
+    },
+    {
+      "id" : 4,
+      "name" : "Xích Khẩu",
+      "poem" : "Xích Khẩu là quả bần cùng\nSinh ra khẩu thiệt bàn cùng thị phi\nChẳng thời mất của nó khi\nKhông thì chó cắn phân ly vợ chồng",
+      "mean" : "Ngày Xích Khẩu là ngày xấu vừa, ngày này sáng tối là hung, khoảng giữa ngày từ 9 giờ đến 15 giờ còn tạm được. Trong ngày Xích Khẩu dễ xảy ra mâu thuẫn, cãi vã, dèm pha, kiện tụng, công việc khó thành. Do đó cần phải biết cẩn trọng giữ gìn lời nói. Nên hạn chế tiến hành các công việc lớn và quan trọng như cưới hỏi, ký kết hợp đồng, khai trương, động thổ, khởi công, nhập trạch, nhậm chức...",
+      "isGood" : false,
+      "level" : 1,
+      "levelTitle" : "Xấu"
+    },
+    {
+      "id" : 5,
+      "name" : "Tiểu Cát",
+      "poem" : "Tiểu Cát gặp hội thanh long\nCầu tài cầu lộc ở trong quẻ này\nCầu tài toại ý vui vầy\nBình an vô sự gặp thầy, gặp quen",
+      "mean" : "Ngày Tiểu Cát (có sách gọi là Tiên Phụ) là ngày khá tốt (cát thần) có nghĩa là \"trước thì bại\" trái ngược với Tốc Hỷ nên buổi sáng hung. Trong ngày Tiểu Cát mọi việc thuận lợi, nên tiến hành các công việc quan trọng như cưới hỏi, ký kết hợp đồng, khai trương, động thổ, khởi công, nhập trạch, nhậm chức...vào buổi chiều",
+      "isGood" : true,
+      "level" : 2,
+      "levelTitle" : "Khá Tốt"
+    },
+    {
+      "id" : 6,
+      "name" : "Không Vong",
+      "poem" : "Không Vong gặp quẻ khẩn cần\nBệnh tật khẩn thiết chẳng làm được chi\nKhông thì ôn tiểu thê nhi\nKhông thì trộm cắp phân ly bất tường",
+      "mean" : "Ngày Không Vong (có sách gọi là Phật Diệt) là ngày khá xấu (hung thần). Ngày Phật diệt có lẽ là ngày Đức Phật Thích Ca Mâu Ni mất nên được coi là ngày đại hung. Trong ngày Không Vong thì kinh doanh phúc lộc không đến, công việc không thuận lợi, khó thành, dễ gặp tai nạn.",
+      "isGood" : false,
+      "level" : 2,
+      "levelTitle" : "Khá Xấu"
+    }
+  ],
+  "dataMonth" : [
+    {
+      "month" : [1,7],
+      "firstDay" : 3
+    },
+    {
+      "month" : [2,8],
+      "firstDay" : 2
+    },
+    {
+      "month" : [3,9],
+      "firstDay" : 5
+    },
+    {
+      "month" : [4,10],
+      "firstDay" : 6
+    },
+    {
+      "month" : [5,11],
+      "firstDay" : 1
+    },
+    {
+      "month" : [6,12],
+      "firstDay" : 4
+    }
+  ]
+}

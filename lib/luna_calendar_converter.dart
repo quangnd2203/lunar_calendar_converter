@@ -20,6 +20,7 @@ class LunaCalendarConverter {
   late final XmlDocument _nhiThapBatTuXml;
   late final XmlDocument _tuoiXungXml;
   late final List<Map<String, dynamic>> _listNgayHoangDaoHacDaoJson;
+  late final Map<String, dynamic> _khongMinhLucDieuData;
 
   LunaCalendarConverter._();
 
@@ -34,12 +35,15 @@ class LunaCalendarConverter {
   }
 
   Future<void> init() async {
-    final String nhiThapBatTuString = await rootBundle.loadString('packages/luna_calendar_converter/assets/xmls/tb_thapnhibattu.xml');
-    _nhiThapBatTuXml = XmlDocument.parse(nhiThapBatTuString);
-    final String tuoiXungString = await rootBundle.loadString('packages/luna_calendar_converter/assets/xmls/tb_tuoixung.xml');
-    _tuoiXungXml = XmlDocument.parse(tuoiXungString);
-    final String ngayHoangDaoHacDao = await rootBundle.loadString('packages/luna_calendar_converter/assets/jsons/ngayhoangdaohacdao.json');
-    _listNgayHoangDaoHacDaoJson = (jsonDecode(ngayHoangDaoHacDao) as List<dynamic>).map<Map<String, dynamic>>((e) => e).toList();
+    String dataString = '';
+    dataString = await rootBundle.loadString('packages/luna_calendar_converter/assets/xmls/tb_thapnhibattu.xml');
+    _nhiThapBatTuXml = XmlDocument.parse(dataString);
+    dataString = await rootBundle.loadString('packages/luna_calendar_converter/assets/xmls/tb_tuoixung.xml');
+    _tuoiXungXml = XmlDocument.parse(dataString);
+    dataString = await rootBundle.loadString('packages/luna_calendar_converter/assets/jsons/ngayhoangdaohacdao.json');
+    _listNgayHoangDaoHacDaoJson = (jsonDecode(dataString) as List<dynamic>).map<Map<String, dynamic>>((e) => e).toList();
+    dataString = await rootBundle.loadString('packages/luna_calendar_converter/assets/jsons/khongminhlucdieu.json');
+    _khongMinhLucDieuData = jsonDecode(dataString);
   }
 
   int INT(double value) {
@@ -379,6 +383,24 @@ class LunaCalendarConverter {
     return element.getElement('tuoixung')!.text;
   }
 
+  Map<String, dynamic> getLucDieuDay(int lunarDay, int lunarMonth){
+    assert (lunarDay > 0);
+    assert (lunarMonth > 0 || lunarMonth < 13);
+    int idLucDieuFirstDayOfMonth = (_khongMinhLucDieuData['dataMonth'] as List).firstWhere((e) => e['month'].contains(lunarMonth))['firstDay'];
+    int remainder = lunarDay % 6 - 1;
+    int dayId = remainder == 0 ? idLucDieuFirstDayOfMonth : idLucDieuFirstDayOfMonth + remainder;
+    return (_khongMinhLucDieuData['dataDay'] as List).firstWhere((e) => e['id'] == dayId);
+  }
+
+  Map<String, dynamic> getLucDieuOfMonthData(int lunarMonth){
+    assert (lunarMonth > 0 || lunarMonth < 13);
+    return (_khongMinhLucDieuData['dataMonth'] as List).firstWhere((e) => e['month'].contains(lunarMonth));
+  }
+
+  List<Map<String, dynamic>> getAllLucDieuData(){
+    return (_khongMinhLucDieuData['dataDay'] as List).map<Map<String, dynamic>>((e) => e).toList();
+  }
+
   List<String> getHours(int jd, {bool isGoodDay = true}) {
     final int chiOfDay = (jd + 1) % 12;
     final int beginCanOffset = (jd - 1) * 2 % 10;
@@ -426,4 +448,6 @@ class LunaCalendarConverter {
         32045;
     return jd;
   }
+
+
 }
